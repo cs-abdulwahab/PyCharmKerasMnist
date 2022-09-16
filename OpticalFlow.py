@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+# https://vision.middlebury.edu/flow/data/
 frame1 = cv2.imread('rubber/frame10.png')
 frame2 = cv2.imread('rubber/frame11.png')
 prvs = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
@@ -13,7 +13,7 @@ hsv_mask[..., 1] = 255
 
 next = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
 
-# Optical flow is now calculated
+# Optical flow is now calculated  : Computes a dense optical flow using the Gunnar Farneback's algorithm
 flow = cv2.calcOpticalFlowFarneback(prvs, next, None, 0.5, 3, 15, 3, 5, 1.2, 0)
 
 # Compute magnitude and angle of 2D vector
