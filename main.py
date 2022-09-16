@@ -10,6 +10,7 @@ from Fibonacci import f as fib
 x_train = x_train / 255
 x_test = x_test / 255
 
+
 model = Sequential()
 model.add(Flatten(input_shape=(28, 28)))
 model.add(Dense(units=16, activation="relu"))
